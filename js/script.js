@@ -23,7 +23,27 @@ select.onchange = function () {
   paragraphs.innerHTML = "";
   
   for (i = 0; i < value; i++) {
-    paragraphs.innerHTML+= '<p class="content">I am some content</p>'
+    paragraphs.innerHTML+= `<p class="content">I am paragraph ${i + 1}</p>`
   }
-
 }
+
+// question 4
+const input = document.querySelector(".input");
+const charCount = document.querySelector(".char-count > b");
+
+input.onkeyup = function() {
+  charCount.innerHTML = this.value.length;
+}
+
+//question 5
+function scrollHandler() {
+  if (window.scrollY >= 35) {
+    document.body.classList.add("highlight");
+    console.log("now");
+  }
+  else {
+    document.body.classList.remove("highlight");
+  }
+}
+
+window.onscroll = scrollHandler;
